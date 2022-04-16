@@ -9,12 +9,13 @@ public class Note {
     @PrimaryKey(autoGenerate = true)
     Integer id;
     String text;
+    Integer userId;
 
     public Note() {
     }
 
     @Ignore
-    public Note(String text) {
+    public Note(String text, Integer userId) {
         this.text = text;
     }
 
