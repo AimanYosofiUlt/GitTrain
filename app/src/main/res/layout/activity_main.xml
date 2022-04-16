@@ -9,59 +9,63 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <androidx.cardview.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/cd_user"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
+                android:layout_margin="25dp"
+                android:background="@drawable/shape_card_view"
                 android:elevation="8dp"
-                app:layout_constraintTop_toTopOf="parent"
+                app:cardCornerRadius="25dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                android:layout_margin="25dp"
-                app:cardCornerRadius="25dp"
-                android:background="@drawable/shape_card_view">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_margin="20dp">
+                    android:layout_margin="20dp"
+                    android:orientation="vertical">
+
                     <EditText
                         android:id="@+id/ed_user_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="20dp"
+                        android:background="@drawable/shape_for_edit"
                         android:hint="Enter user name"
-                        android:paddingLeft="15dp"
-                        android:background="@drawable/shape_for_edit"/>
+                        android:paddingLeft="15dp" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
+                        android:layout_marginTop="10dp"
                         android:gravity="center"
-                        android:layout_marginTop="10dp">
+                        android:orientation="vertical">
+
                         <Button
                             android:id="@+id/btn_get_location"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/shape_for_button"
                             android:text="Get location"
-                            android:textSize="20sp"
-                            android:textAllCaps="false"/>
+                            android:textAllCaps="false"
+                            android:textSize="20sp" />
 
                         <Button
                             android:id="@+id/btn_save"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
                             android:background="@drawable/shape_for_button"
                             android:text="Save"
-                            android:textSize="20sp"
                             android:textAllCaps="false"
-                            android:layout_marginTop="15dp"/>
+                            android:textSize="20sp" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -72,57 +76,58 @@
                 android:id="@+id/rec_user_info"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_constraintTop_toBottomOf="@id/cd_user"
+                android:layout_margin="20dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                android:layout_margin="20dp"/>
+                app:layout_constraintTop_toBottomOf="@id/cd_user" />
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cd_search"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="25dp"
+                android:background="@drawable/shape_card_view"
+                android:elevation="8dp"
+                app:cardCornerRadius="25dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rec_user_info">
 
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cd_search"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:elevation="8dp"
-                    android:layout_margin="25dp"
-                    app:layout_constraintTop_toBottomOf="@id/rec_user_info"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:cardCornerRadius="25dp"
-                    android:background="@drawable/shape_card_view">
-                  <LinearLayout
-                      android:layout_width="match_parent"
-                      android:layout_height="match_parent"
-                      android:orientation="vertical"
-                      android:gravity="center">
-                      <EditText
-                          android:id="@+id/ed_search"
-                          android:layout_width="match_parent"
-                          android:layout_height="wrap_content"
-                          android:layout_margin="20dp"
-                          android:hint="Search note"
-                          android:imeOptions="actionSearch"
-                          android:paddingLeft="15dp"
-                          android:background="@drawable/shape_for_edit"/>
-                      <Button
-                          android:id="@+id/btn_search"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:text="Search"
-                          android:textAllCaps="false"
-                          android:textSize="20sp"
-                          android:background="@drawable/shape_for_button"/>
-                  </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/ed_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:background="@drawable/shape_for_edit"
+                        android:hint="Search note"
+                        android:imeOptions="actionSearch"
+                        android:paddingLeft="15dp" />
+
+                    <Button
+                        android:id="@+id/btn_search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_for_button"
+                        android:text="Search"
+                        android:textAllCaps="false"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rec_search"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_constraintTop_toBottomOf="@id/cd_search"
+                android:layout_margin="20dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                android:layout_margin="20dp"/>
+                app:layout_constraintTop_toBottomOf="@id/cd_search" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
