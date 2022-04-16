@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Ahmed/Desktop/work/PROJECTS/GitTrain/app/src/main/res/drawable/shape_card_view.xml" value="0.1965" />
+        <entry key="..\:/Users/Ahmed/Desktop/work/PROJECTS/GitTrain/app/src/main/res/drawable/shape_for_button.xml" value="0.1965" />
+        <entry key="..\:/Users/Ahmed/Desktop/work/PROJECTS/GitTrain/app/src/main/res/drawable/shape_for_edit.xml" value="0.1965" />
+        <entry key="..\:/Users/Ahmed/Desktop/work/PROJECTS/GitTrain/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Ultimate/AndroidStudioProjects/GitTrain/app/src/main/res/layout/activity_main.xml" value="0.21614583333333334" />
       </map>
     </option>
