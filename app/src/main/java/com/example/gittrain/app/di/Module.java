@@ -1,7 +1,6 @@
 package com.example.gittrain.app.di;
 
 import android.app.Application;
-import android.content.Context;
 
 import com.example.gittrain.dataacess.local.daos.AddressDao;
 import com.example.gittrain.dataacess.local.daos.NoteDao;
@@ -19,40 +18,33 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @dagger.Module
 @InstallIn(ActivityComponent.class)
 public class Module {
-
     @ActivityScoped
     @Provides
-    Context provideContext(Application application) {
-        return application.getApplicationContext();
+    public AppDatabase provideAppDatabase(Application application) {
+        return AppDatabase.getDatabase(application);
     }
 
     @ActivityScoped
     @Provides
-    AppDatabase provideAppDatabase(Context context) {
-        return AppDatabase.getInstance(context);
-    }
-
-    @ActivityScoped
-    @Provides
-    UserDao provideUserDao(AppDatabase appDatabase) {
+    public UserDao provideUserDao(AppDatabase appDatabase) {
         return appDatabase.userDao();
     }
 
     @ActivityScoped
     @Provides
-    NoteDao provideNoteDao(AppDatabase appDatabase) {
+    public NoteDao provideNoteDao(AppDatabase appDatabase) {
         return appDatabase.noteDao();
     }
 
     @ActivityScoped
     @Provides
-    AddressDao provideAddressDao(AppDatabase appDatabase) {
+    public AddressDao provideAddressDao(AppDatabase appDatabase) {
         return appDatabase.addressDao();
     }
 
     @ActivityScoped
     @Provides
-    AddressApi provideAddressApi() {
+    public AddressApi provideAddressApi() {
         return new Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com/")
                 .addConverterFactory(GsonConverterFactory.create())

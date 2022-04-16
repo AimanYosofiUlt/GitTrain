@@ -3,9 +3,11 @@ package com.example.gittrain.dataacess.local.entites;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Ignore;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(foreignKeys = {
+@Entity(indices = {@Index(value = {"addressId"})},
+        foreignKeys = {
         @ForeignKey(onDelete = ForeignKey.CASCADE, entity = Address.class,
                 parentColumns = {"id"}, childColumns = {"addressId"})
 })
@@ -38,5 +40,13 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getAddressId() {
+        return addressId;
+    }
+
+    public void setAddressId(Integer addressId) {
+        this.addressId = addressId;
     }
 }
