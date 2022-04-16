@@ -17,13 +17,15 @@ import com.example.gittrain.dataacess.local.entites.User;
         , exportSchema = true
         , version = 1)
 public abstract class AppDatabase extends RoomDatabase {
-   public abstract NoteDao noteDao();
-    public  abstract UserDao userDao();
+    public abstract NoteDao noteDao();
+
+    public abstract UserDao userDao();
+
     public abstract AddressDao addressDao();
 
     private static AppDatabase INSTANCE = null;
 
-   public static AppDatabase getInstance(Context context) {
+    public static AppDatabase getInstance(Context context) {
         AppDatabase temp = INSTANCE;
         if (temp != null) {
             return temp;

@@ -1,21 +1,27 @@
 package com.example.gittrain.dataacess.local.entites;
 
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(foreignKeys = {
+        @ForeignKey(onDelete = ForeignKey.CASCADE, entity = Address.class,
+                parentColumns = {"id"}, childColumns = {"addressId"})
+})
 public class User {
     @PrimaryKey(autoGenerate = true)
     Integer id;
     String name;
+    Integer addressId;
 
     public User() {
     }
 
     @Ignore
-    public User(String name) {
+    public User(String name,Integer addressId) {
         this.name = name;
+        this.addressId = addressId;
     }
 
     public Integer getId() {
