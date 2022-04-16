@@ -33,7 +33,6 @@ android {
 }
 
 dependencies {
-
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:2.0.4'
     testImplementation 'junit:junit:4.13.2'
@@ -59,10 +58,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata:2.4.1"
     // Lifecycles only (without ViewModel or LiveData)
     implementation "androidx.lifecycle:lifecycle-runtime:2.4.1"
-
     // Saved state module for ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.1"
-
     // Annotation processor
     //noinspection LifecycleAnnotationProcessorWithJava8
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:2.4.1"
