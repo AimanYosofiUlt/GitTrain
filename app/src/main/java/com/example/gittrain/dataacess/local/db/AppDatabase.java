@@ -23,7 +23,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract AddressDao addressDao();
 
-    private static AppDatabase INSTANCE = null;
+    private static AppDatabase INSTANCE ;
 
     public static AppDatabase getInstance(Context context) {
         AppDatabase temp = INSTANCE;
