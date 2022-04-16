@@ -14,7 +14,7 @@ import com.example.gittrain.dataacess.local.entites.Note;
 import com.example.gittrain.dataacess.local.entites.User;
 
 @Database(entities = {User.class, Note.class, Address.class}
-        , exportSchema = true
+        , exportSchema = false
         , version = 1)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract NoteDao noteDao();
@@ -23,13 +23,12 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract AddressDao addressDao();
 
-    private static AppDatabase INSTANCE = null;
+    private static final AppDatabase INSTANCE = null;
 
-    public static AppDatabase getInstance(Context context) {
+    public static AppDatabase getDatabase(Context context) {
         AppDatabase temp = INSTANCE;
-        if (temp != null) {
+        if (temp != null)
             return temp;
-        }
 
         return Room.databaseBuilder(
                 context,

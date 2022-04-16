@@ -7,9 +7,9 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Note {
     @PrimaryKey(autoGenerate = true)
-    Integer id;
-    String text;
-    Integer userId;
+    public Integer id;
+    public String text;
+    public Integer userId;
 
     public Note() {
     }
@@ -33,5 +33,13 @@ public class Note {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 }
