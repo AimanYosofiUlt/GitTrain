@@ -7,7 +7,6 @@ import com.example.gittrain.dataacess.local.daos.AddressDao;
 import com.example.gittrain.dataacess.local.daos.NoteDao;
 import com.example.gittrain.dataacess.local.daos.UserDao;
 import com.example.gittrain.dataacess.local.db.AppDatabase;
-import com.example.gittrain.dataacess.local.entites.Address;
 import com.example.gittrain.dataacess.remote.api.AddressApi;
 
 import dagger.Provides;
